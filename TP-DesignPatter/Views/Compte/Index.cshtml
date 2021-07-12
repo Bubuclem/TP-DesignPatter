@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<<div class="flex flex-col items-center justify-center bg-green-500 backgroundIndex">
+    <h1 class="text-green-900 text-center" style="margin-top: 11vw">Bienvenue sur gestionaire d'ulisateur<br /> le plus puissant du marché !</h1>
+    <span class="bg-green-500">@Html.ActionLink("Nous rejoindre", "Create", "Compte")</span>
+</div>
+
+ <div class="flex flex-col m-auto p-auto justify-center" style="margin-top: 4vw">
+
+     <div class="flex justify-center">
+         <div class="flex flex-nowrap">
+             <div class="inline-block" style="margin-right: 5vw">
+                 <div class=" px-8 py-8 bg-white overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" style="border-left: solid #10b981 3px;">
+
+                     <h3 class="py-2 text-4xl font-bold font-sans" style="margin-top:0"><i class="fas fa-clock text-4xl text-green-500"></i> OptiReponse®</h3>
+                     <p class="text-xl">En moyenne le temps de réponse est de 0.3 ms <br /> Grâce à notre technique brevetée</p>
+
+                 </div>
+             </div>
+             <div class="inline-block" style="margin-right: 5vw">
+                 <div class=" px-8 py-8 bg-white overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" style="border-left: solid #10b981 3px;">
+
+                     <h3 class="py-2 text-4xl font-bold font-sans" style="margin-top:0"><i class="fas fa-server text-4xl text-green-500"></i> Disponibilité</h3>
+                     <p class="text-xl">Nos infrastructures sont sécurisées et répliquées partout dans le monde <br /> Ce qui nous garantit une haute disponibilité</p>
+
+                 </div>
+             </div>
+             <div class="inline-block">
+                 <div class=" px-8 py-8 bg-white overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" style="border-left: solid #10b981 3px;">
+
+                     <h3 class="py-2 text-4xl font-bold font-sans" style="margin-top:0"><i class="fas fa-ticket-alt text-4xl text-green-500"></i> Support 24h/24h</h3>
+                     <p class="text-xl">Il est primordial pour nous de vous épauler au quotidien <br /> Grâce à plusieurs plates-formes à travers le monde</p>
+
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+<style>
+    .backgroundIndex {
+        background-image: url(https://i.imgur.com/iQUxJmS.png);
+        background-repeat: no-repeat;
+        background-size: 31vw;
+        background-position-x: 50px;
+        height: 32vw;
+        border-bottom: solid #064e3b 6px;
+    }
+
+
+    span {
+        position: relative;
+        display: inline-flex;
+        width: 180px;
+        height: 55px;
+        margin: 50px 15px;
+    }
+
+        span a {
+            font-size: 19px;
+            letter-spacing: 1px;
+            transform-style: preserve-3d;
+            transform: translateZ(-25px);
+            transition: transform .25s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+            span a:before,
+            span a:after {
+                position: absolute;
+                content: "Nous rejoindre";
+                height: 55px;
+                width: 180px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 3px solid black;
+                box-sizing: border-box;
+                border-radius: 10px;
+            }
+
+            span a:before {
+                color: #fff;
+                background: #000;
+                transform: rotateY(0deg) translateZ(25px);
+            }
+
+            span a:after {
+                color: #000;
+                transform: rotateX(90deg) translateZ(25px);
+            }
+
+            span a:hover {
+                transform: translateZ(-25px) rotateX(-90deg);
+            }
+</style>

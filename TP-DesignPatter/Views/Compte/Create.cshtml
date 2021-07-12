@@ -1,0 +1,65 @@
+﻿@model TP_DesignPatter.Models.Compte
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="min-h-screen flex items-center justify-center">
+
+        <!-- login form -->
+        <div class="bg-white max-w-lg p-16 rounded shadow-2xl w-2/3">
+
+            <h2 class="text-3xl text-center font-bold mb-10 text-gray-800">Crée votre compte</h2>
+
+            
+            <form class="space-y-5">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+                    <label class="block mb-1 font-bold text-gray-500">Nom</label>
+                    @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @class = "w-full border-2 border-gray-200 p-3 rounded outline-none transition duration-300 ease-in-out transform focus:border-green-400 focus:text-green-500" } })
+                    @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <label class="block mb-1 font-bold text-gray-500">Prenom</label>
+                    @Html.EditorFor(model => model.Prenom, new { htmlAttributes = new { @class = "w-full border-2 border-gray-200 p-3 rounded outline-none transition duration-300 ease-in-out transform focus:border-green-400 focus:text-green-500" } })
+                    @Html.ValidationMessageFor(model => model.Prenom, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <label class="block mb-1 font-bold text-gray-500">Adresse mail</label>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "w-full border-2 border-gray-200 p-3 rounded outline-none transition duration-300 ease-in-out transform focus:border-green-400 focus:text-green-500" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <label class="block mb-1 font-bold text-gray-500">Mot de passe</label>
+                    @Html.PasswordFor(model => model.MotDePasse, new { @class = "w-full border-2 border-gray-200 p-3 rounded outline-none transition duration-300 ease-in-out transform focus:border-green-400 focus:text-green-500" })
+                    @Html.ValidationMessageFor(model => model.MotDePasse, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <label class="block mb-1 font-bold text-gray-500">Retapez le mot de passe</label>
+                    @Html.PasswordFor(model => model.MotDePasse, new { @class = "w-full border-2 border-gray-200 p-3 rounded outline-none transition duration-300 ease-in-out transform focus:border-green-400 focus:text-green-500" })
+                    @Html.ValidationMessageFor(model => model.MotDePasse, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" id="agree" style="position: relative;bottom: 5px">
+                    <label for="agree" class="ml-2 text-gray-700 text-sm">J'accepte les conditions d'utilisations et la politique de confidentialité.</label>
+                </div>
+
+                <input type="submit" value="Crée mon compte" class="block w-full bg-green-400 hover:bg-green-500 transition duration-700 ease-in-out rounded transform hover:-translate-x-0 hover:scale-110 p-4 rounded text-green-800 hover:text-green-900" />
+            </form>
+
+        </div>
+
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
